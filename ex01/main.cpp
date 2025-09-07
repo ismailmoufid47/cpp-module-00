@@ -25,7 +25,9 @@ Contact createContact()
 	std::string phoneNumber = getInput(ENTER("phone number"));
 
 	bool allDigits = true;
-	for (size_t i = 0; i < phoneNumber.length(); i++)
+	if ((phoneNumber.at(0) != '+' && !isdigit(phoneNumber.at(0))) || phoneNumber.length() == 1)
+		allDigits = false;
+	for (size_t i = 1; i < phoneNumber.length(); i++)
 	{
 		if (!isdigit(phoneNumber[i]))
 		{
@@ -35,7 +37,7 @@ Contact createContact()
 	}
 	if (!allDigits)
 	{
-		std::cout << CLEAR_SCREEN "Phone number must contain only digits. Please try again." << std::endl;
+		std::cout << CLEAR_SCREEN "Phone number must start with a '+' or a digit and contain only digits." << std::endl;
 		return createContact();
 	}
 	contact.setPhoneNumber(phoneNumber);
