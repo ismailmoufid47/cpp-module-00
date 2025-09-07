@@ -24,18 +24,18 @@ Contact createContact()
 
 	std::string phoneNumber = getInput(ENTER("phone number"));
 
-	bool allDigits = true;
+	bool goodNumber = true;
 	if ((phoneNumber.at(0) != '+' && !isdigit(phoneNumber.at(0))) || phoneNumber.length() == 1)
-		allDigits = false;
+		goodNumber = false;
 	for (size_t i = 1; i < phoneNumber.length(); i++)
 	{
 		if (!isdigit(phoneNumber[i]))
 		{
-			allDigits = false;
+			goodNumber = false;
 			break;
 		}
 	}
-	if (!allDigits)
+	if (!goodNumber)
 	{
 		std::cout << CLEAR_SCREEN "Phone number must start with a '+' or a digit and contain only digits." << std::endl;
 		return createContact();
@@ -62,16 +62,16 @@ void handleSearch(const PhoneBook &phoneBook)
 		std::cout << "Operation cancelled." << std::endl;
 		return;
 	}
-	bool allDigits = true;
+	bool goodNumber = true;
 	for (size_t i = 0; i < input.length(); i++)
 	{
 		if (!isdigit(input[i]))
 		{
-			allDigits = false;
+			goodNumber = false;
 			break;
 		}
 	}
-	if (!allDigits)
+	if (!goodNumber)
 	{
 		std::cout << "Invalid input. Please enter a valid index." << std::endl;
 		handleSearch(phoneBook);

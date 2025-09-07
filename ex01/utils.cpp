@@ -5,7 +5,7 @@ std::string filterString(const std::string& str)
 {
 	std::string result;
 	for (size_t i = 0; i < str.length(); i++)
-		if (str[i] >= 33 && str[i] <= 126)
+		if (str[i] >= 33 && str[i] <= 126 && str[i] == ' ')
 			result += str[i];
 	return result;
 }
