@@ -1,13 +1,4 @@
 #include "Contact.hpp"
-#include <iostream>
-
-Contact::Contact() : firstName(""), lastName(""), nickname(""), phoneNumber(""), darkestSecret("")
-{
-}
-
-Contact::~Contact()
-{
-}
 
 void Contact::setFirstName(const std::string& firstName)
 {
@@ -61,15 +52,14 @@ std::string Contact::getDarkestSecret() const
 
 bool Contact::isEmpty() const
 {
-    return firstName.empty() || lastName.empty() || nickname.empty() || 
-           phoneNumber.empty() || darkestSecret.empty();
+    return firstName.empty() || lastName.empty() || nickname.empty() || phoneNumber.empty() || darkestSecret.empty();
 }
 
 void Contact::displayFullInfo() const
 {
-    std::cout << "First Name: " << firstName << std::endl;
-    std::cout << "Last Name: " << lastName << std::endl;
-    std::cout << "Nickname: " << nickname << std::endl;
-    std::cout << "Phone Number: " << phoneNumber << std::endl;
-    std::cout << "Darkest Secret: " << darkestSecret << std::endl;
+    std::cout << BOLD_TEXT("First Name: ") << firstName << std::endl;
+    std::cout << BOLD_TEXT("Last Name: ") << lastName << std::endl;
+    std::cout << BOLD_TEXT("Nickname: ") << nickname << std::endl;
+    std::cout << BOLD_TEXT("Phone Number: ") << phoneNumber << std::endl;
+    std::cout << BOLD_TEXT("Darkest Secret: ") << darkestSecret << std::endl;
 }

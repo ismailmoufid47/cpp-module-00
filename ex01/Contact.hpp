@@ -1,9 +1,11 @@
 #ifndef CONTACT_HPP
 #define CONTACT_HPP
 
-#include <string>
+#include <iostream>
+#include "macros.hpp"
 
-class Contact {
+class Contact
+{
 private:
     std::string firstName;
     std::string lastName;
@@ -12,8 +14,6 @@ private:
     std::string darkestSecret;
 
 public:
-    Contact();
-    ~Contact();
 
     void setFirstName(const std::string& firstName);
     void setLastName(const std::string& lastName);

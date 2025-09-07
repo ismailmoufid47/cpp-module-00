@@ -12,7 +12,7 @@ int main(int argc, char **argv)
 			int currentArgLength = currentArg.length();
 			for (int i = 0; i < currentArgLength; i++)
 				std::cout << static_cast<char>(toupper(currentArg[i]));
-			std::cout << std::endl;
 		}
+		std::cout << std::endl;
 	}
 }
