@@ -9,19 +9,19 @@
 class PhoneBook
 {
 private:
-    Contact contacts[8];
-    int contactCount;
-    int nextIndex;
+	Contact contacts[8];
+	int contactCount;
+	int nextIndex;
 
-    std::string truncateString(const std::string& str, size_t width) const;
+	std::string truncateString(const std::string& str, size_t width) const;
 
 public:
 	PhoneBook();
-    void addContact(const Contact& contact);
+	void addContact(const Contact& contact);
 
-    void displayContacts() const;
-    void displayContact(int index) const;
-    int getContactCount() const;
+	void displayContacts() const;
+	void displayContact(int index) const;
+	int getContactCount() const;
 };
 
 #endif

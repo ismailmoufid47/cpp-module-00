@@ -1,6 +1,14 @@
 #include "macros.hpp"
 #include <iostream>
 
+bool isOnly(const std::string& str, char c)
+{
+	for (size_t i = 0; i < str.length(); i++)
+		if (str[i] != c)
+			return false;
+	return true;
+}
+
 std::string filterString(const std::string& str)
 {
 	std::string result;
@@ -18,7 +26,7 @@ std::string getInput(const std::string& prompt)
 	{
 		std::cout << prompt;
 		std::getline(std::cin, input);
-		if (!input.empty())
+		if (!input.empty() && !isOnly(input, ' '))
 			return filterString(input);
 		if (std::cin.eof())
 		{
